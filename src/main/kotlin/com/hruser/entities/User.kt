@@ -3,12 +3,14 @@ package com.hruser.entities
 import javax.persistence.*
 
 
-@Entity
+@Entity(name = "tb_user")
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null,
     val name: String,
+
+    @Column(unique = true)
     val email: String,
     val password: String,
 
